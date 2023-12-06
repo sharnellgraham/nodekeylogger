@@ -24,3 +24,10 @@ function Keyboard(dev) {
         self.emit(event.type, event);
       }
     });
+
+    this.data.on('error', err => {
+        self.emit('error', err);
+        throw new Error(err);
+       });
+      
+      }
