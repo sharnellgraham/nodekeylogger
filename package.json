@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/SharnellGraham/nodekeylogger/issues"
   },
-  "homepage": "https://github.com/SharnellGraham/nodekeylogger#readme"
+  "homepage": "https://github.com/SharnellGraham/nodekeylogger#readme",
+  "dependencies": {
+    "node-keylogger": "^0.0.1"
+  }
 }
