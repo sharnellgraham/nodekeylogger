@@ -31,3 +31,21 @@ function Keyboard(dev) {
        });
       
       }
+      function parse(input, buffer) {
+        let event;
+        if (buffer.readUInt16LE(16) === EV_KEY) {
+          event = {
+            timeS: buffer.readUInt16LE(0),
+            timeMS: buffer.readUInt16LE(8),
+            keyCode: buffer.readUInt16LE(18),
+          };
+          event.keyId = toKey[event.keyCode];
+          event.type = EVENT_TYPES[buffer.readUInt32LE(20)];
+        }
+        return event;
+      }
+      
+      
+      Keyboard.Keys = toKey;
+      
+      module.exports = Keyboard;
